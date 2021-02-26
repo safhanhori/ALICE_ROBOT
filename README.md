@@ -1,6 +1,6 @@
-![Cutiepii](https://telegra.ph/file/655a94dd9dac006eff5fb.jpg)
+![ALICE](https://telegra.ph/file/655a94dd9dac006eff5fb.jpg)
 # Cutiepii Robot 
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://perso.crans.org/besson/LICENSE.html) [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com) [![Updates channel!](https://img.shields.io/badge/Join%20Channel-Cutiepii-red)](https://t.me/Cutiepii_Updates) [![Join Support!](https://img.shields.io/badge/Support%20Chat-Cutiepii-red)](https://t.me/Cutieppii_Support)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://perso.crans.org/besson/LICENSE.html) [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com) [![Updates channel!](https://img.shields.io/badge/Join%20Channel-Animeweebs2)](https://t.me/Animeweebs2) [![Join Support!](https://img.shields.io/badge/Support%20Chat-Cutiepii-red)](https://t.me/Animeweebs2)
 
 
 A modular Telegram Python bot running on python3 with a sqlalchemy database and an entirely themed persona to make Cutiepii suitable for Anime and Manga group chats. 
