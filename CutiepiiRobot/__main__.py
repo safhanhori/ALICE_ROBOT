@@ -51,23 +51,21 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hi {}, my name is {}! 
+Hi {}, my name is {Alice}! 
 
 I am an Anime themed advance group management bot with a lot of Special Features.
 
-You can find my list of available commands with /help.
-
-FREE MOVIES AND SERIES ON [HINDI K DRAMA](https://Hindikdrama.xyz)
+You can find my list of available commands with /help.Indian Anime wrens ](https://Animeweebs2)
 
 Developed By Techno Ocean
 
-Maintained by [Rajkumar](http://t.me/Wadiwala_Tech)
+Maintained by [『DC』ᵀᵉᵃᵐ★ᎳᎪᏒᏒᎥᎾᏒ★](http://t.me/『DC』ᵀᵉᵃᵐ★ᎳᎪᏒᏒᎥᎾᏒ★)
 
 """
 
 HELP_STRINGS = """
-Hey there! My name is *{}*.
-I'm a heroine For Fun and help admins manage their groups with Cutiepii! Have a look at the following for an idea of some of \
+Hey there! My name is *{Alice }*.
+I'm an anime girl  For support . hand help admins manage their groups with Alice! Have a look at the following for an idea of some of \
 the things I can help you with.
 
 *Main* commands available:
@@ -85,7 +83,7 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-SAITAMA_IMG = "https://telegra.ph/file/d1f83886dd1c5d0b3c530.png"
+SAITAMA_IMG = "https://telegra.ph/file/655a94dd9dac006eff5fb.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
 Cutiepii is hosted on one of Kaizoku's Servers and doesn't require any donations as of now but \
@@ -197,22 +195,22 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="☑️ Add Cutiepii to your group",
+                            text="☑️ Add Alice  to your group",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                     ],
                      [
                          InlineKeyboardButton(
                              text="🚑 Support Group",
-                             url=f"https://t.me/{SUPPORT_CHAT}"),
+                             url=f"https://t.me/Animeweebs2{SUPPORT_CHAT}"),
                          InlineKeyboardButton(
                              text="🔔 Updates Channel",
-                             url="https://t.me/techno_ocean")
+                             url="https://t.me/Animeweebs2")
                      ],
                      [
                          InlineKeyboardButton(
                              text="🧾 Getting started guide",
-                             url="https://t.me/techno_ocean/10")
+                             url="https://t.me/Animeweebs2")
                      ],
                      [
                          InlineKeyboardButton(
