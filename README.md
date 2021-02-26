@@ -18,7 +18,7 @@ News channel as at [Alice  Updates](https://t.me/Animeweebs2)
 ## How to setup/deploy.
 
 ### Read these notes carefully before proceeding 
- - Edit any mentions of @Cutiepii_Support to your own support chat. 
+ - Edit any mentions of @yuuko_shinoji_bot to your own support chat. 
  - Your code must be open source and a link to your fork's repository must be there in the start reply of the bot. [See this](https://github.com/Rajkumar-27/test-1-cutiepii/blob/shiken/CutiepiiRobot/__main__.py#L25)
  - Lastly, if you are found to run this repo without the code being open sourced or the repository link not mentioned in the bot, we will push a gban for you in our network because of being in violation of the license, you are free to be a dick and not respect the open source code (we do not mind) but we will not be having you around our chats.
 
@@ -33,7 +33,7 @@ REMEMBER: Turn on worker dyno (Don't worry It's free :D) & Webhook
 Now send the bot /start, If it doesn't respond go to https://dashboard.heroku.com/apps/(app-name)/settings and remove webhook and port.
 ```
 
-  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Rajkumar-27/Cutiepii-Robot.git)
+  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://https://github.com/sadhanhori/ALICE_ROBOT)
 
 </details>  
 <details>
@@ -57,7 +57,7 @@ defaults set in the sample_config, hence making it easier to upgrade.
 
 An example `config.py` file could be:
 ```
-from CutiepiiRobot.sample_config import Config
+from ALICE_Robot.sample_config import Config
 
 class Development(Config):
     OWNER_ID =  1163444049 # your telegram ID
@@ -171,7 +171,7 @@ All that is needed is that your .py file is in the modules folder.
 
 To add commands, make sure to import the dispatcher via
 
-`from CutiepiiRobot import dispatcher`.
+`from AliceRobot import dispatcher`.
 
 You can then add commands using the usual
 
@@ -197,11 +197,11 @@ You can use [nssm](https://nssm.cc/usage) to install the bot as service on windo
 Make sure to edit the start and restart bats to your needs. 
 Note: the restart bat requires that User account control be disabled.
 
-For queries or any issues regarding the bot please open an issue ticket or visit us at [Cutiepii Support](https://t.me/Cutiepii_Support)
+For queries or any issues regarding the bot please open an issue ticket or visit us at [ALICE Support](https://t.me/Animeweebs2)
 ## How to setup on Heroku 
 For starters click on this button 
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Rajkumar-27/Cutiepii-Robot.git) 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://https://github.com/sadhanhori/ALICE_ROBOT.git) 
 
 
 ## Credits
