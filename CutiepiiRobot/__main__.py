@@ -215,11 +215,11 @@ def start(update: Update, context: CallbackContext):
                      [
                          InlineKeyboardButton(
                              text="🗄 Source code",
-                             url="https://github.com/Rajkumar-27/Cutiepii-Robot")
+                             url="https://github.com/sadhanhori/ALICE_ROBOT.git")
                      ]]))
     else:
         update.effective_message.reply_text(
-            "I'm online!\n<b>Up since:</b> <code>{}</code>".format(uptime),
+            "Hello sweet person I'm now online to help you 😊😊"\n<b>Up since:</b> <code>{}</code>".format(uptime),
             parse_mode=ParseMode.HTML)
 
 
