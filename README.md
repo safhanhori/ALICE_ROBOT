@@ -7,13 +7,13 @@ A modular Telegram Python bot running on python3 with a sqlalchemy database and 
 
 Can be found on telegram as [Alice  Robot](https://t.me/yuuko_shinoji_bot).
 
-The Support group can be reached out to at [Alice  Support](https://t.me/Animeweebs2), where you can ask for help about [Cutiepii Robot](https://t.me/Cutiepii_Robot), discover/request new features, report bugs, and stay in the loop whenever a new update is available. 
+The Support group can be reached out to at [Alice  Support](https://t.me/Animeweebs2), where you can ask for help about [ALICE  ROBOT](https://t.me/Animeweebs2), discover/request new features, report bugs, and stay in the loop whenever a new update is available. 
 
 News channel as at [Alice  Updates](https://t.me/Animeweebs2) 
 
 
 ## Stats
-![Rajkumar's Github stats](https://github-readme-stats.vercel.app/api?username=Rajkumar-27&show_icons=true&theme=tokyonight)
+![『DC』ᵀᵉᵃᵐ★ᎳᎪᏒᏒᎥᎾᏒ★'s Github stats](https://github-readme-stats.vercel.app/api?username=Rajkumar-27&show_icons=true&theme=tokyonight)
 
 ## How to setup/deploy.
 
