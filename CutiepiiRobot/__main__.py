@@ -4,14 +4,14 @@ import re
 from sys import argv
 from typing import Optional
 
-from CutiepiiRobot import (ALLOW_EXCL, CERT_PATH, DONATION_LINK, LOGGER,
-                          OWNER_ID, PORT, SUPPORT_CHAT, TOKEN, URL, WEBHOOK,
-                          dispatcher, StartTime, telethn, updater)
+from Cutiepii_Robot import (ALLOW_EXCL, CERT_PATH, DONATION_LINK, LOGGER,
+                          OWNER_ID, PORT, SUPPORT_CHAT, TOKEN, URL, WEBHOOK, SUPPORT_CHAT,
+                          dispatcher, StartTime, telethn, updater, pgram)
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from CutiepiiRobot.modules import ALL_MODULES
-from CutiepiiRobot.modules.helper_funcs.chat_status import is_user_admin
-from CutiepiiRobot.modules.helper_funcs.misc import paginate_modules
+from Cutiepii_Robot.modules import ALL_MODULES
+from Cutiepii_Robot.modules.helper_funcs.chat_status import is_user_admin
+from Cutiepii_Robot.modules.helper_funcs.misc import paginate_modules
 from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ParseMode,
                       Update)
 from telegram.error import (BadRequest, ChatMigrated, NetworkError,
@@ -51,22 +51,18 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hi {}, my name is {Alice}! 
+Welcome user: {}, , I am Alice ! 
 
 I am an Anime themed advance group management bot with a lot of Special Features.
 
-You can find my list of available commands with /help.Indian Anime wrens ](https://Animeweebs2)
+You can also make my sister. [Cutiepii Repo](https://github.com/Rajkumar-27/CutiepiiRobot)
 
-Developed By Techno Ocean
-
-Maintained by [『DC』ᵀᵉᵃᵐ★ᎳᎪᏒᏒᎥᎾᏒ★](http://t.me/『DC』ᵀᵉᵃᵐ★ᎳᎪᏒᏒᎥᎾᏒ★)
-
+Use /help to know my abilities [^_^](https://telegra.ph/file/d31755c8e0245be16c4f5.png).
 """
 
 HELP_STRINGS = """
-Hey there! My name is *{Alice }*.
-I'm an anime girl  For support . hand help admins manage their groups with Alice! Have a look at the following for an idea of some of \
-the things I can help you with.
+[Cutie](https://telegra.ph/file/d0441d0d700f54b55c9a1.mp4) at your service.
+I can help you with following functions in managing group.
 
 *Main* commands available:
  • /help: PM's you this message.
@@ -84,6 +80,8 @@ And the following:
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
 SAITAMA_IMG = "https://telegra.ph/file/655a94dd9dac006eff5fb.jpg"
+CUTIEPINGIMG = "https://telegra.ph/file/ea42efe4fb0ccbb578fce.gif"
+
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
 Cutiepii is hosted on one of Kaizoku's Servers and doesn't require any donations as of now but \
@@ -101,7 +99,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("CutiepiiRobot.modules." +
+    imported_module = importlib.import_module("Cutiepii_Robot.modules." +
                                               module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
@@ -146,6 +144,7 @@ def send_help(chat_id, text, keyboard=None):
         chat_id=chat_id,
         text=text,
         parse_mode=ParseMode.MARKDOWN,
+        disable_web_page_preview=True,
         reply_markup=keyboard)
 
 
@@ -165,6 +164,16 @@ def start(update: Update, context: CallbackContext):
         if len(args) >= 1:
             if args[0].lower() == "help":
                 send_help(update.effective_chat.id, HELP_STRINGS)
+            elif args[0].lower().startswith("ghelp_"):
+                mod = args[0].lower().split('_', 1)[1]
+                if not HELPABLE.get(mod, False):
+                    return
+                send_help(
+                    update.effective_chat.id, HELPABLE[mod].__help__,
+                    InlineKeyboardMarkup([[
+                        InlineKeyboardButton(
+                            text="Back", callback_data="help_back")
+                    ]]))
             elif args[0].lower() == "markdownhelp":
                 IMPORTED["extras"].markdown_help_sender(update)
             elif args[0].lower() == "disasters":
@@ -195,33 +204,31 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="☑️ Add Alice  to your group",
+                            text="Add Alice to your group",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                     ],
-                     [
-                         InlineKeyboardButton(
-                             text="🚑 Support Group",
-                             url=f"https://t.me/Animeweebs2{SUPPORT_CHAT}"),
-                         InlineKeyboardButton(
-                             text="🔔 Updates Channel",
+                     [                         
+                       InlineKeyboardButton(
+                             text="Chat With Alice fans ",
                              url="https://t.me/Animeweebs2")
-                     ],
+                    ],
                      [
                          InlineKeyboardButton(
-                             text="🧾 Getting started guide",
+                             text="Support Chat",
+                             url=f"https://t.me/Animeweebs2"{SUPPORT_CHAT}"),
+                         InlineKeyboardButton(
+                             text="Updates Channel",
                              url="https://t.me/Animeweebs2")
-                     ],
-                     [
-                         InlineKeyboardButton(
-                             text="🗄 Source code",
-                             url="https://github.com/sadhanhori/ALICE_ROBOT.git")
+                  
                      ]]))
     else:
+        update.effective_message.reply_video(
+                CUTIEPINGIMG)
         update.effective_message.reply_text(
-            "Hello sweet person I'm now online to help you 😊😊"\n<b>Up since:</b> <code>{}</code>".format(uptime),
+            "Alice Alice ! \n<b>Queen in command! since:</b> <code>{}</code>".format(uptime),
             parse_mode=ParseMode.HTML)
-
+                    
 
 # for test purposes
 def error_callback(update: Update, context: CallbackContext):
@@ -315,7 +322,17 @@ def get_help(update: Update, context: CallbackContext):
 
     # ONLY send help in PM
     if chat.type != chat.PRIVATE:
-
+        if len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
+            module = args[1].lower()
+            update.effective_message.reply_text(
+                f"Contact me in PM to get help of {module.capitalize()}",
+                reply_markup=InlineKeyboardMarkup([[
+                    InlineKeyboardButton(
+                        text="Help",
+                        url="t.me/{}?start=ghelp_{}".format(
+                            context.bot.username, module))
+                ]]))
+            return
         update.effective_message.reply_text(
             "Contact me in PM to get the list of possible commands.",
             reply_markup=InlineKeyboardMarkup([[
@@ -523,11 +540,21 @@ def migrate_chats(update: Update, context: CallbackContext):
 
 
 def main():
+
+    if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
+        try:
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Cutie Is Now Available in Bedroom")
+        except Unauthorized:
+            LOGGER.warning("Bot isnt able to send message to support_chat, go and check!")
+        except BadRequest as e:
+            LOGGER.warning(e.message)
+
     test_handler = CommandHandler("test", test)
     start_handler = CommandHandler("start", start)
 
     help_handler = CommandHandler("help", get_help)
-    help_callback_handler = CallbackQueryHandler(help_button, pattern=r"help_")
+    help_callback_handler = CallbackQueryHandler(
+        help_button, pattern=r"help_.*")
 
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(
@@ -559,7 +586,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Using long polling.")
+        LOGGER.info("Ahh Baby. I am Feeling So Good.")
         updater.start_polling(timeout=15, read_latency=4, clean=True)
 
     if len(argv) not in (1, 3, 4):
@@ -573,4 +600,5 @@ def main():
 if __name__ == '__main__':
     LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
     telethn.start(bot_token=TOKEN)
+    pgram.start()
     main()
